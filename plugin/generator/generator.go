@@ -82,7 +82,7 @@ func (g *CaddyfileGenerator) GenerateCaddyfile(logger *zap.Logger) ([]byte, []st
 			}
 		}
 	} else {
-		logger.Info("Skipping default Caddyfile because no path is set")
+		// logger.Info("Skipping default Caddyfile because no path is set")
 	}
 
 	for i, dockerClient := range(g.dockerClients){
@@ -111,7 +111,7 @@ func (g *CaddyfileGenerator) GenerateCaddyfile(logger *zap.Logger) ([]byte, []st
 				logger.Error("Failed to get Swarm configs", zap.Error(err))
 			}
 		} else {
-			logger.Info("Skipping swarm config caddyfiles because swarm is not available")
+			// logger.Info("Skipping swarm config caddyfiles because swarm is not available")
 		}
 	
 		// Add containers
@@ -170,10 +170,10 @@ func (g *CaddyfileGenerator) GenerateCaddyfile(logger *zap.Logger) ([]byte, []st
 					}
 				}
 			} else {
-				logger.Error("Failed to get Swarm services", zap.Error(err))
+				// logger.Error("Failed to get Swarm services", zap.Error(err))
 			}
 		} else {
-			logger.Info("Skipping swarm services because swarm is not available")
+			// logger.Info("Skipping swarm services because swarm is not available")
 		}	
 	}
 
