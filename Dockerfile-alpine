@@ -1,5 +1,4 @@
-FROM alpine:3.11
-LABEL maintainer "Lucas Lorentz <lucaslorentzlara@hotmail.com>"
+FROM alpine:3.15
 
 EXPOSE 80 443 2019
 ENV XDG_CONFIG_HOME /config
@@ -7,7 +6,7 @@ ENV XDG_DATA_HOME /data
 
 RUN apk add --no-cache ca-certificates curl
 
-COPY artifacts/binaries/linux/amd64/caddy /bin/
+COPY bin/caddy /bin/
 
 ENTRYPOINT ["/bin/caddy"]
 
