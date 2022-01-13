@@ -1,5 +1,5 @@
 # Caddy-Docker-Proxy 
-[![Build Status](https://dev.azure.com/lucaslorentzlara/lucaslorentzlara/_apis/build/status/lucaslorentz.caddy-docker-proxy?branchName=master)](https://dev.azure.com/lucaslorentzlara/lucaslorentzlara/_build/latest?definitionId=1) [![Go Report Card](https://goreportcard.com/badge/github.com/lucaslorentz/caddy-docker-proxy)](https://goreportcard.com/report/github.com/lucaslorentz/caddy-docker-proxy)
+[![Build Status](https://dev.azure.com/lucaslorentzlara/lucaslorentzlara/_apis/build/status/lucaslorentz.caddy-docker-proxy?branchName=master)](https://dev.azure.com/lucaslorentzlara/lucaslorentzlara/_build/latest?definitionId=1) [![Go Report Card](https://goreportcard.com/badge/github.com/ACAVJW4H/caddy-docker-proxy)](https://goreportcard.com/report/github.com/ACAVJW4H/caddy-docker-proxy)
 
 ## Introduction
 This plugin enables Caddy to be used as a reverse proxy for Docker containers via labels.
@@ -324,7 +324,7 @@ For containers, that would be the container IPs.
 
 Only containers/services that are connected to Caddy ingress networks are used.
 
-:warning: caddy docker proxy does a best effort to automatically detect what are the ingress networks. But that logic fails on some scenarios: [#207](https://github.com/lucaslorentz/caddy-docker-proxy/issues/207). To have a more resilient solution, you can manually configure Caddy ingress network using CLI option `ingress-networks` or environment variable `CADDY_INGRESS_NETWORKS`.
+:warning: caddy docker proxy does a best effort to automatically detect what are the ingress networks. But that logic fails on some scenarios: [#207](https://github.com/ACAVJW4H/caddy-docker-proxy/issues/207). To have a more resilient solution, you can manually configure Caddy ingress network using CLI option `ingress-networks` or environment variable `CADDY_INGRESS_NETWORKS`.
 
 Usage: `upstreams [http|https] [port]`  
 
@@ -565,7 +565,7 @@ ARG CADDY_VERSION=2.4.0
 FROM caddy:${CADDY_VERSION}-builder AS builder
 
 RUN xcaddy build \
-    --with github.com/lucaslorentz/caddy-docker-proxy/plugin \
+    --with github.com/ACAVJW4H/caddy-docker-proxy/plugin \
     --with <additional-plugins>
 
 FROM caddy:${CADDY_VERSION}-alpine
@@ -643,4 +643,4 @@ $ docker rm -f caddy whoami0 whoami1
 
 You can build Caddy using [xcaddy](https://github.com/caddyserver/xcaddy) or [caddy docker builder](https://hub.docker.com/_/caddy).
 
-Use module name **github.com/lucaslorentz/caddy-docker-proxy/plugin** to add this plugin to your build.
+Use module name **github.com/ACAVJW4H/caddy-docker-proxy/plugin** to add this plugin to your build.

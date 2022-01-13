@@ -17,9 +17,9 @@ import (
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
-	"github.com/lucaslorentz/caddy-docker-proxy/plugin/config"
-	"github.com/lucaslorentz/caddy-docker-proxy/plugin/docker"
-	"github.com/lucaslorentz/caddy-docker-proxy/plugin/generator"
+	"github.com/ACAVJW4H/caddy-docker-proxy/plugin/config"
+	"github.com/ACAVJW4H/caddy-docker-proxy/plugin/docker"
+	"github.com/ACAVJW4H/caddy-docker-proxy/plugin/generator"
 
 	"go.uber.org/zap"
 )
